@@ -1,0 +1,15 @@
+[Unit]
+Description=TG-Otvet Telegram Bot System
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/tg-otvet
+Environment="PATH=/tg-otvet/.venv/bin"
+ExecStart=/tg-otvet/.venv/bin/python /tg-otvet/run.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
